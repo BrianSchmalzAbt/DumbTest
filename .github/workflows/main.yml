@@ -26,6 +26,8 @@ jobs:
 
       - name: Build project
         run: |
+          pwd
+          ls -al
           ls ${{ github.workspace }}
           /opt/st/stm32cubeide_1.16.0/stm32cubeide --launcher.suppressErrors -nosplash \
             -application org.eclipse.cdt.managedbuilder.core.headlessbuild \
