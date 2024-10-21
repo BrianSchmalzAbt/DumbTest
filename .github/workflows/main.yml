@@ -26,18 +26,15 @@ jobs:
 
       - name: Build project
         run: |
-          pwd
-          ls -al
-          ls ${{ github.workspace }}
           /opt/st/stm32cubeide_1.16.0/stm32cubeide --launcher.suppressErrors -nosplash \
             -application org.eclipse.cdt.managedbuilder.core.headlessbuild \
             -data /tmp/stm-workspace \
-            -import "STM32CubeIDE"
+            -import "/__w/DumbTest/DumbTest/STM32CubeIDE"
 
           /opt/st/stm32cubeide_1.16.0/stm32cubeide --launcher.suppressErrors -nosplash \
             -application org.eclipse.cdt.managedbuilder.core.headlessbuild \
             -data /tmp/stm-workspace \
-            -build BLE_p2pServer/Debug
+            -build /__w/DumbTest/DumbTest/BLE_p2pServer/Debug
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
