@@ -34,17 +34,17 @@ jobs:
 
           ls -al /opt/st
 
-          ls -al /opt/st/stm32cubeide_1.16.0
+          ls -al /opt/st/stm32cubeide_1.16.1
           
-          /opt/st/stm32cubeide_1.16.0/stm32cubeide --launcher.suppressErrors -nosplash \
+          /opt/st/stm32cubeide_1.16.1/stm32cubeide --launcher.suppressErrors -nosplash \
             -application org.eclipse.cdt.managedbuilder.core.headlessbuild \
             -data /tmp/stm-workspace \
-            -import "/__w/DumbTest/DumbTest/STM32CubeIDE"
+            -import "STM32CubeIDE"
 
-          /opt/st/stm32cubeide_1.16.0/stm32cubeide --launcher.suppressErrors -nosplash \
+          /opt/st/stm32cubeide_1.16.1/stm32cubeide --launcher.suppressErrors -nosplash \
             -application org.eclipse.cdt.managedbuilder.core.headlessbuild \
             -data /tmp/stm-workspace \
-            -build /__w/DumbTest/DumbTest/BLE_p2pServer/Debug
+            -build BLE_p2pServer/Debug
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
